@@ -92,7 +92,7 @@ function getSales(storeName) {
 function printSales(store) {
   var container = document.createElement('div');
   container.innerHTML = '<p>' + store.storeLocation + '</p>';
-  document.body.apendChild(container);
+  document.body.appendChild(container);
 
   var salesList = document.createElement('ul');
   var listArr = [];
@@ -103,6 +103,6 @@ function printSales(store) {
 
   var fullList = listArr.join('');
 
-  list.innerHTML = fullList;
-  document.apendChild(salesList);
+  salesList.innerHTML = fullList;
+  document.appendChild(salesList);
 }
