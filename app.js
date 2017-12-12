@@ -1,6 +1,6 @@
 'use strict';
 
-var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
+var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
 //Objects containing store info
 var pikeFirst = {
@@ -10,7 +10,7 @@ var pikeFirst = {
   avgCook: 6.3,
   sales: [],
   actCust: function(min,max) {
-    return Math.floor(Math.random() * (this.custMax - this.custMin) + this.custMin);
+    return Math.floor(Math.random() * (this.custMax - this.custMin + 1) + this.custMin);
   }
 }
 
@@ -21,7 +21,7 @@ var seaTac = {
   avgCook: 1.2,
   sales: [],
   actCust: function(min,max) {
-    return Math.floor(Math.random() * (this.custMax - this.custMin) + this.custMin);
+    return Math.floor(Math.random() * (this.custMax - this.custMin + 1) + this.custMin);
   }
 }
 
@@ -32,7 +32,7 @@ var seaCenter = {
   avgCook: 3.7,
   sales: [],
   actCust: function(min,max) {
-    return Math.floor(Math.random() * (this.custMax - this.custMin) + this.custMin);
+    return Math.floor(Math.random() * (this.custMax - this.custMin + 1) + this.custMin);
   }
 }
 
@@ -43,7 +43,7 @@ var capHill = {
   avgCook: 2.3,
   sales: [],
   actCust: function(min,max) {
-    return Math.floor(Math.random() * (this.custMax - this.custMin) + this.custMin);
+    return Math.floor(Math.random() * (this.custMax - this.custMin + 1) + this.custMin);
   }
 }
 
@@ -54,7 +54,7 @@ var alki = {
   avgCook: 4.6,
   sales: [],
   actCust: function(min,max) {
-    return Math.floor(Math.random() * (this.custMax - this.custMin) + this.custMin);
+    return Math.floor(Math.random() * (this.custMax - this.custMin + 1) + this.custMin);
   }
 }
 
