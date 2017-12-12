@@ -2,16 +2,18 @@
 
 var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
+function ranNum(min,max) {
+  return Math.floor(Math.random() * (this.custMax - this.custMin + 1) + this.custMin);
+}
+
 //Objects containing store info
 var pikeFirst = {
   storeLocation: 'First and Pike',
-  custMin: 23,
-  custMax: 65,
-  avgCook: 6.3,
-  sales: [],
-  actCust: function(min,max) {
-    return Math.floor(Math.random() * (this.custMax - this.custMin + 1) + this.custMin);
-  }
+  custMinPerHour: 23,
+  custMaxPerHour: 65,
+  avgCookPerCust: 6.3,
+  salesPerHour: [],
+  custsPerHour: [],
 }
 
 var seaTac = {
