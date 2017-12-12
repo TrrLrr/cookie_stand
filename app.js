@@ -97,14 +97,14 @@ function printSales(store) {
 
 
   var container = document.createElement('div');
-  container.innerHTML = '<p>' + store.storeLocation + '</p>';
+  container.innerHTML = '<p>' + store.storeLocation + ' Hourly Sales</p>';
   document.body.appendChild(container);
 
   var salesList = document.createElement('ul');
   var listArr = [];
 
   for(var i = 0; i < storeHours.length; i++) {
-    listArr.push('<li>' + storeHours[i] + ' ' + store.sales[i] + '</li>');
+    listArr.push('<li>' + storeHours[i] + ': ' + store.sales[i] + '</li>');
   }
 
   listArr.push('<li> Daily total: ' + totalSales + '</li>');
