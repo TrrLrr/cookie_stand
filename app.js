@@ -3,18 +3,39 @@
 var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
 function ranNum(min,max) {
-  return Math.floor(Math.random() * (this.custMax - this.custMin + 1) + this.custMin);
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-//Objects containing store info
-var pikeFirst = {
-  storeLocation: 'First and Pike',
-  custMinPerHour: 23,
-  custMaxPerHour: 65,
-  avgCookPerCust: 6.3,
-  salesPerHour: [],
-  custsPerHour: [],
-}
+var patsLocales = [];
+
+//Constructor function
+function Store(storeLocation, custMinPerHour, custMaxPerHour, avgCookPerCust) {
+  this.storeLocation = storeLocation;
+  this.custMinPerHour = custMinPerHour;
+  this.custMaxPerHour = custMaxPerHour;
+  this.avgCookPerCust = avgCookPerCust;
+  salesPerHour = [];
+  custsPerHour = [];
+  dailyTotalSales = 0;
+  calcHourlyCusts = function() {
+    for( var i = 0; i < storeHours.length; i++) {
+      this.custsPerHour.push(ranNum(this.custMinPerHour,this.custMaxPerHour))
+    };
+  };
+  calcSalesPerHour = function() {
+    this.calcHourlyCusts();
+    for(var i = 0; i < storeHours.length; i++) {
+      this.salesPerHour.push(Math.ceil(this.custsPerHour[i] * this.avgCookPerCust))
+    };
+  };
+  patsLocales.push(this);
+};
+
+new Store('First and Pike', 23, 65, 6.3);
+new Store('SeaTac Airport', 3, 24, 1.2);
+new Store('Seattle Center', 11, 38, 3.7);
+
+
 
 var seaTac = {
   storeLocation: 'SeaTac Airport',
