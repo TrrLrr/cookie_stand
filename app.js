@@ -90,6 +90,12 @@ function getSales(storeName) {
 }
 
 function printSales(store) {
+
+  hourlySales(store);
+  var totalSales = dailyTotal(store);
+
+
+
   var container = document.createElement('div');
   container.innerHTML = '<p>' + store.storeLocation + '</p>';
   document.body.appendChild(container);
@@ -101,8 +107,11 @@ function printSales(store) {
     listArr.push('<li>' + storeHours[i] + ' ' + store.sales[i] + '</li>');
   }
 
+  listArr.push('<li> Daily total: ' + totalSales + '</li>');
   var fullList = listArr.join('');
 
   salesList.innerHTML = fullList;
   document.body.appendChild(salesList);
+
+
 }
