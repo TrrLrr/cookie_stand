@@ -104,5 +104,5 @@ function printSales(store) {
   var fullList = listArr.join('');
 
   salesList.innerHTML = fullList;
-  document.appendChild(salesList);
+  document.body.appendChild(salesList);
 }
