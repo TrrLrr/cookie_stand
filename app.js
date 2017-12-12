@@ -2,6 +2,7 @@
 
 var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
 
+//Objects containing store info
 var pikeFirst = {
   storeLocation: 'First and Pike',
   custMin: 23,
@@ -57,13 +58,51 @@ var alki = {
   }
 }
 
-function getSales(storeName) {
-  return Math.floor(storeName.actCust() * storeName.avgCook);
+//functions
+
+//addition function
+function sum(a,b) {
+  return (a + b);
+}
+//function to determine number of cookies sold daily
+function dailyTotal(storeLoc) {
+    var arrSum = 0;
+
+  for(var i =0; i <storeLoc.sales.length; i++) {
+    arrSum = sum(arrSum,storeLoc.sales[i]);
+    }
+  return arrSum;
+  console.log(arrSum);
+
 }
 
+//function to determine cookies sold every hour
 function hourlySales(store) {
   for(var i = 0; i < storeHours.length; i++) {
     store.sales.push(getSales(store));
   }
   console.log(store);
+}
+
+
+function getSales(storeName) {
+  return Math.floor(storeName.actCust() * storeName.avgCook);
+}
+
+function printSales(store) {
+  var container = document.createElement('div');
+  container.innerHTML = '<p>' + store.storeLocation + '</p>';
+  document.body.apendChild(container);
+
+  var salesList = document.createElement('ul');
+  var listArr = [];
+
+  for(var i = 0; i < storeHours.length; i++) {
+    listArr.push('<li>' + storeHours[i] + ' ' + store.sales[i] + '</li>');
+  }
+
+  var fullList = listArr.join('');
+
+  list.innerHTML = fullList;
+  document.apendChild(salesList);
 }
