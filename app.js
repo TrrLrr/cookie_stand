@@ -115,3 +115,12 @@ function printSales(store) {
 
 
 }
+
+//code from samhamm
+
+calcCookiesEachHour: function() {
+  this.calcCustsEachHour();
+  for(var i = 0; i < hours.length; i++) {
+    var oneHour =Math.ceil(this.custsEachHour[i] * this.avgCookiesPerHour);
+  }
+}
