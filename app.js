@@ -86,7 +86,7 @@ function hourlySales(store) {
 
 
 function getSales(storeName) {
-  return Math.floor(storeName.actCust() * storeName.avgCook);
+  return Math.ceil(storeName.actCust() * storeName.avgCook);
 }
 
 function printSales(store) {
