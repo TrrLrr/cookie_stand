@@ -3,6 +3,7 @@
 var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
 
 var pikeFirst = {
+  storeLocation: 'First and Pike',
   custMin: 23,
   custMax: 65,
   avgCook: 6.3,
@@ -13,6 +14,7 @@ var pikeFirst = {
 }
 
 var seaTac = {
+  storeLocation: 'SeaTac Airport',
   custMin: 3,
   custMax: 24,
   avgCook: 1.2,
@@ -23,6 +25,7 @@ var seaTac = {
 }
 
 var seaCenter = {
+  storeLocation: 'Seattle Center',
   custMin: 11,
   custMax: 38,
   avgCook: 3.7,
@@ -33,6 +36,7 @@ var seaCenter = {
 }
 
 var capHill = {
+  storeLocation: 'Capitol Hill',
   custMin: 20,
   custMax: 38,
   avgCook: 2.3,
@@ -43,6 +47,7 @@ var capHill = {
 }
 
 var alki = {
+  storeLocation: 'Alki',
   custMin: 2,
   custMax: 16,
   avgCook: 4.6,
