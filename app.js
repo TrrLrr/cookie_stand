@@ -38,13 +38,15 @@ function Store(storeLocation, custMinPerHour, custMaxPerHour, avgCookPerCust) {
   this.calcHourlyCusts = function() {
     for( var i = 0; i < storeHours.length; i++) {
       this.custsPerHour.push(ranNum(this.custMinPerHour,this.custMaxPerHour))
-    };
+    }
   };
   this.calcSalesPerHour = function() {
     this.calcHourlyCusts();
     for(var i = 0; i < storeHours.length; i++) {
-      this.salesPerHour.push(Math.ceil(this.custsPerHour[i] * this.avgCookPerCust))
-    };
+      var sales = (Math.ceil(this.custsPerHour[i] * this.avgCookPerCust));
+      this.salesPerHour.push(sales);
+      this.dailyTotalSales += sales;
+      }
   };
 
   this.render = function() {
@@ -59,6 +61,10 @@ function Store(storeLocation, custMinPerHour, custMaxPerHour, avgCookPerCust) {
       tdEl.textContent = this.salesPerHour[i];
       trEl.appendChild(tdEl);
     }
+
+    tdEl = document.createElement('td');
+    tdEl.textContent = this.dailyTotalSales;
+    trEl.appendChild(tdEl);
 
     storeTable.appendChild(trEl);
   };
@@ -79,6 +85,10 @@ function renderHeader() {
     thEl.textContent = storeHours[i];
     trEl.appendChild(thEl);
   }
+  thEl = document.createElement('th');
+  thEl.textContent = 'Total';
+  trEl.appendChild(thEl);
+
   storeTable.appendChild(trEl)
 }
 
