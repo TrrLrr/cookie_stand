@@ -66,3 +66,5 @@ function Store(storeLocation, custMinPerHour, custMaxPerHour, avgCookPerCust) {
 new Store('First and Pike', 23, 65, 6.3);
 new Store('SeaTac Airport', 3, 24, 1.2);
 new Store('Seattle Center', 11, 38, 3.7);
+
+renderSales();
