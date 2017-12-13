@@ -1,21 +1,21 @@
 'use strict';
 
 
-//Helper functions
+//"Helper" functions
 //**********************************************************************************************
 
 function ranNum(min,max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-//declaring variable to
-var storeTable = document.getElementById('sales_table');
-
 
 function renderSales() {
   for( var i = 0; i < patsLocales.length; i++) {
     patsLocales[i].render();
   }
 }
+//declaring element to add to
+//**********************************************************************************************
+var storeTable = document.getElementById('sales_table');
 
 //Global arrays
 //**********************************************************************************************
@@ -46,9 +46,8 @@ function Store(storeLocation, custMinPerHour, custMaxPerHour, avgCookPerCust) {
       var sales = (Math.ceil(this.custsPerHour[i] * this.avgCookPerCust));
       this.salesPerHour.push(sales);
       this.dailyTotalSales += sales;
-      }
+    }
   };
-
   this.render = function() {
     this.calcSalesPerHour();
     var tdEl = document.createElement('td');
@@ -72,6 +71,28 @@ function Store(storeLocation, custMinPerHour, custMaxPerHour, avgCookPerCust) {
 };
 
 
+//Hourly Sales total functions
+//*********************************************************************************************
+function renderFooter() {
+  var tdEl = document.createElement('td');
+  var trEl = document.createElement('tr');
+
+  tdEl.textContent = 'Hourly Totals';
+  trEl.appendChild(tdEl);
+
+  for(var i = 0; i < storeHours.length;i++) {
+    var sum = 0;
+    for( var j = 0; j < patsLocales.length; j++) {
+      sum += patsLocales[j].this.salesPerHour[i];
+    }
+    elTd = document.createElement('td');
+    elTd.textContent = sum;
+    elTr.appendChild(elTd);
+  }
+
+  storeTable.appendChild(elTr);
+}
+
 //header function
 //*********************************************************************************************
 function renderHeader() {
@@ -85,6 +106,7 @@ function renderHeader() {
     thEl.textContent = storeHours[i];
     trEl.appendChild(thEl);
   }
+
   thEl = document.createElement('th');
   thEl.textContent = 'Total';
   trEl.appendChild(thEl);
@@ -104,3 +126,4 @@ new Store('Alki', 2, 16, 4.6);
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 renderHeader();
 renderSales();
+renderFooter();
