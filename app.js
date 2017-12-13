@@ -83,14 +83,14 @@ function renderFooter() {
   for(var i = 0; i < storeHours.length;i++) {
     var sum = 0;
     for( var j = 0; j < patsLocales.length; j++) {
-      sum += patsLocales[j].this.salesPerHour[i];
+      sum += patsLocales[j].salesPerHour[i];
     }
-    elTd = document.createElement('td');
-    elTd.textContent = sum;
-    elTr.appendChild(elTd);
+    tdEl = document.createElement('td');
+    tdEl.textContent = sum;
+    trEl.appendChild(tdEl);
   }
 
-  storeTable.appendChild(elTr);
+  storeTable.appendChild(trEl);
 }
 
 //header function
@@ -113,7 +113,6 @@ function renderHeader() {
 
   storeTable.appendChild(trEl)
 }
-
 //Creating new store instances
 //**************************************************************************************
 new Store('First and Pike', 23, 65, 6.3);
@@ -121,6 +120,7 @@ new Store('SeaTac Airport', 3, 24, 1.2);
 new Store('Seattle Center', 11, 38, 3.7);
 new Store('Capitol Hill', 20, 38, 2.3);
 new Store('Alki', 2, 16, 4.6);
+
 
 //rendering Sales numbers
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
