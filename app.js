@@ -89,8 +89,16 @@ function renderFooter() {
     tdEl.textContent = sum;
     trEl.appendChild(tdEl);
   }
+  var totalSum = 0;
+  for(var k = 0; k < patsLocales.length; k++){
+    totalSum += patsLocales[k].dailyTotalSales;
+    }
+  tdEl = document.createElement('td');
+  tdEl.textContent = totalSum;
+  trEl.appendChild(tdEl);
 
   storeTable.appendChild(trEl);
+
 }
 
 //header function
