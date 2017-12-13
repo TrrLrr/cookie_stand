@@ -13,9 +13,17 @@ function renderSales() {
     patsLocales[i].render();
   }
 }
+
+function renderSched() {
+  for( var i = 0; i < patsLocales.length; i++) {
+    patsLocales[i].schedule();
+  }
+}
 //declaring element to add to
 //**********************************************************************************************
 var storeTable = document.getElementById('sales_table');
+
+var tossSchedule = document.getElementById('toss_schedule');
 
 //Global arrays
 //**********************************************************************************************
@@ -67,6 +75,36 @@ function Store(storeLocation, custMinPerHour, custMaxPerHour, avgCookPerCust) {
 
     storeTable.appendChild(trEl);
   };
+  //+++++++++++++++++++++++++++++++++++++++++++++++++++
+  //Stretch Goal table
+  //+++++++++++++++++++++++++++++++++++++++++++++++++++
+  this.schedule = function() {
+    var minToss = 2;
+    var tdEl = document.createElement('td');
+    var trEl = document.createElement('tr');
+    tdEl.textContent = this.storeLocation;
+    trEl.appendChild(tdEl);
+
+    for(var i = 0; i < storeHours.length; i++) {
+      var hourlies = this.custsPerHour[i];
+      var tossPerHour = 0;
+      while(hourlies >= 20) {
+        hourlies = hourlies - 20;
+        tossPerHour++;
+      }
+      if (tossPerHour > 2) {
+        tdEl = document.createElement('td');
+        tdEl.textContent = tossPerHour;
+        trEl.appendChild(tdEl);
+      } else {
+        tdEl = document.createElement('td');
+        tdEl.textContent = minToss;
+        trEl.appendChild(tdEl);
+      }
+    }
+    tossSchedule.appendChild(trEl);
+  };
+
 
 };
 
@@ -100,7 +138,23 @@ function renderFooter() {
   storeTable.appendChild(trEl);
 
 }
+//header function schedule
+//*********************************************************************************************
+function schedHeader() {
+  var thEl = document.createElement('th');
+  var trEl = document.createElement('tr');
+  thEl.textContent = 'Location';
+  trEl.appendChild(thEl);
 
+  for( var i = 0; i < storeHours.length; i++) {
+    thEl = document.createElement('th');
+    thEl.textContent = storeHours[i];
+    trEl.appendChild(thEl);
+  }
+
+
+  tossSchedule.appendChild(trEl);
+}
 //header function
 //*********************************************************************************************
 function renderHeader() {
@@ -135,3 +189,6 @@ new Store('Alki', 2, 16, 4.6);
 renderHeader();
 renderSales();
 renderFooter();
+
+schedHeader();
+renderSched();
