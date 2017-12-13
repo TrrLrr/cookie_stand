@@ -7,7 +7,7 @@
 function ranNum(min,max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-//declaring variable to 
+//declaring variable to
 var storeTable = document.getElementById('sales_table');
 
 
@@ -64,6 +64,10 @@ function Store(storeLocation, custMinPerHour, custMaxPerHour, avgCookPerCust) {
   };
 
 };
+
+
+//header function
+//*********************************************************************************************
 
 
 //Creating new store instances

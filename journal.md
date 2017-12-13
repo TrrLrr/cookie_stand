@@ -1,7 +1,9 @@
 # Today I Learned...
 
-The things that struck me most about today weren't necessarily about the concepts of
+Dec 11: The things that struck me most about today weren't necessarily about the concepts of
 code or programming, but rather the process of creating it. I found it very helpful to step away
 from the screen, and write out my code on paper when I felt like I was stuck. This really
 forced me to focus on the logic, and think about WHY my code would behave a certain way. I also
-spent a lot more time talking to fellow class mates, bouncing ideas off each other, and helping them with things I'd already gotten a handle of. I found that talking through a problem would often reveal the answer to the problem I was having. 
+spent a lot more time talking to fellow class mates, bouncing ideas off each other, and helping them with things I'd already gotten a handle of. I found that talking through a problem would often reveal the answer to the problem I was having.
+
+Dec 12: Today was another great day for collaboration and group problem solving. Even after lab, trouble shooting and talking with other students via slack proved invaluable. The biggest breakthrough today was reaching a better understand of the DOM, and the value of constructor functions. Also, it seems silly, but the importance and usefulness of proper and thorough commenting within my code became very apparent. After adding comments and dividers to my JS files, it was alot easier to jump back in to quickly and easily figure out where I was and What I was working on. 
