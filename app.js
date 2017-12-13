@@ -68,7 +68,19 @@ function Store(storeLocation, custMinPerHour, custMaxPerHour, avgCookPerCust) {
 
 //header function
 //*********************************************************************************************
+function renderHeader() {
+  var thEl = document.createElement('th');
+  var trEl = document.createElement('tr');
+  thEl.textContent = 'Location';
+  trEl.appendChild(thEl);
 
+  for( var i = 0; i < storeHours.length; i++) {
+    thEl = document.createElement('th');
+    thEl.textContent = storeHours[i];
+    trEl.appendChild(thEl);
+  }
+  storeTable.appendChild(trEl)
+}
 
 //Creating new store instances
 //**************************************************************************************
@@ -80,4 +92,5 @@ new Store('Alki', 2, 16, 4.6);
 
 //rendering Sales numbers
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+renderHeader();
 renderSales();
