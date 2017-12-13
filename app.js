@@ -1,17 +1,15 @@
 'use strict';
 
 
-//Helper functions and arrays
+//Helper functions
 //**********************************************************************************************
-var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
 function ranNum(min,max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
+//declaring variable to 
 var storeTable = document.getElementById('sales_table');
 
-var patsLocales = [];
 
 function renderSales() {
   for( var i = 0; i < patsLocales.length; i++) {
@@ -19,6 +17,11 @@ function renderSales() {
   }
 }
 
+//Global arrays
+//**********************************************************************************************
+var storeHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
+
+var patsLocales = [];
 
 //Constructor function
 //**********************************************************************************************
@@ -63,10 +66,14 @@ function Store(storeLocation, custMinPerHour, custMaxPerHour, avgCookPerCust) {
 };
 
 
+//Creating new store instances
+//**************************************************************************************
 new Store('First and Pike', 23, 65, 6.3);
 new Store('SeaTac Airport', 3, 24, 1.2);
 new Store('Seattle Center', 11, 38, 3.7);
 new Store('Capitol Hill', 20, 38, 2.3);
 new Store('Alki', 2, 16, 4.6);
 
+//rendering Sales numbers
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 renderSales();
