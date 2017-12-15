@@ -4,8 +4,8 @@ main {
   margin-top: 150px;
 }
 
-fieldset {
-  outline: none;
+form {
+  margin-left: 100px;
 }
 
 input[type="text"] {
@@ -18,17 +18,18 @@ button {
   border: none;
   border-radius: 3px;
   background: #905b6c;
-  color: #fff;
+  color: #441313;
   padding: 4px 12px;
   font-size: 20px;
   margin-left: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
+  display: block;
 }
 
 fieldset {
   padding: 20px;
-  display: inline;
+  display: inline-grid;
 }
 header img {
   position: absolute;
@@ -74,21 +75,14 @@ h1 {
 }
 
 h2 {
-  font-size:1em;
-  font-weight: 300;
+  font-size:24px;
+  font-weight: 200;
   text-align: left;
   display: block;
   line-height:1em;
-  padding-bottom: 2em;
-  color: #756e6e;
-  margin-left: 120px;
-}
 
-h2 a {
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #FB667A;
-  text-decoration: none;
+  color: #050505;
+  margin-left: 120px;
 }
 
 
