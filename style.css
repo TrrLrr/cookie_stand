@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+fieldset {
+  border: 0;
+}
+
 main {
   margin-top: 150px;
 }
@@ -25,6 +29,15 @@ button {
   margin-top: 20px;
   margin-bottom: 20px;
   display: block;
+  transition: 350ms all;
+}
+
+button:hover {
+
+  background: #623644;
+  color: #1b0505;
+
+
 }
 
 fieldset {
