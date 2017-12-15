@@ -1,5 +1,60 @@
 @charset "UTF-8";
 
+main {
+  margin-top: 150px;
+}
+
+fieldset {
+  outline: none;
+}
+
+input[type="text"] {
+  border: solid 1px #000;
+  padding: 8px 18px;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  border-radius: 3px;
+  background: #905b6c;
+  color: #fff;
+  padding: 4px 12px;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+fieldset {
+  padding: 20px;
+  display: inline;
+}
+header img {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  height: 55%;
+  width: inherit;
+}
+
+.header_text {
+  color: #c7b7b7;
+  margin-left: 225px;
+}
+
+
+
+.header {
+    overflow: hidden;
+    background-color: #441313;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+  }
+
 
 body {
   font-family: helvetica, sans-serif;
@@ -36,8 +91,6 @@ h2 a {
   text-decoration: none;
 }
 
-.blue { color: #032332; }
-.yellow { color: #FFF842; }
 
 .container th h1 {
 	  font-weight: bold;

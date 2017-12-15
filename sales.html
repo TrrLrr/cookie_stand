@@ -3,46 +3,55 @@
 <html>
   <head>
     <title>Daily Sales</title>
+
     <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
-    <h1>Pat's Salmon Cookie's</h1>
-    <h2>Daily/Hourly Sales</h2>
+    <header class="header">
+      <div class="header_img">
+        <img src="https://github.com/codefellows/seattle-201d29/blob/master/08-review-debugging/lab/assets/salmon.png?raw=true">
+      </div>
+      <h1 class="header_text">Pat's Salmon Cookie's</h1>
+    </header>
 
-    <form id="new_store">
+    <main>
 
-      <fieldset>
-        <label for="name">Store Name:</label>
-        <input type="text" name="name" placeholder="Enter Store Name" required>
-      </fieldset>
+      <h2>Daily/Hourly Sales</h2>
 
-      <fieldset>
-        <label for="min">Minimum Customers Per Hour</label>
-        <input type="text" name="min" placeholder="Enter Min Cust" required>
-      </fieldset>
+      <form id="new_store">
 
-      <fieldset>
-        <label for="max">Maximum Customers Per Hour</label>
-        <input type="text" name="max" placeholder="Enter Max Cust" required>
-      </fieldset>
+        <fieldset>
+          <label for="name">Store Name:</label>
+          <input type="text" name="name" placeholder="Enter Store Name" required>
+        </fieldset>
 
-      <fieldset>
-        <label for="avg">Average Cookies Per Customer</label>
-        <input type="text" name="avg" placeholder="Enter Average Cookies Per Cust" required>
-      </fieldset>
+        <fieldset>
+          <label for="min">Minimum Customers Per Hour:</label>
+          <input type="text" name="min" placeholder="Enter Min Cust" required>
+        </fieldset>
 
-      <button id="submit_button" type="submit">Add Store</button>
+        <fieldset>
+          <label for="max">Maximum Customers Per Hour:</label>
+          <input type="text" name="max" placeholder="Enter Max Cust" required>
+        </fieldset>
+
+        <fieldset>
+          <label for="avg">Average Cookies Per Customer:</label>
+          <input type="text" name="avg" placeholder="Enter Average Cookies Per Cust" required>
+        </fieldset>
+
+        <button id="submit_button" type="submit">Add Store</button>
 
 
-    </form>
+      </form>
 
-    <table class="container" id="sales_table"></table>
+      <table class="container" id="sales_table"></table>
 
-    <h1>Tosser Scheduling</h1>
+      <h1>Tosser Scheduling</h1>
 
-    <table class="container" id="toss_schedule"></table>
-
+      <table class="container" id="toss_schedule"></table>
+   </main>
 
     <script src="app.js"></script>
   </body>
