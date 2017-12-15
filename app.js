@@ -3,6 +3,14 @@
 
 //"Helper" functions
 //**********************************************************************************************
+function makeTable(){
+  renderHeader();
+  renderSales();
+  renderFooter();
+
+  schedHeader();
+  renderSched();
+}
 
 function ranNum(min,max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -19,11 +27,35 @@ function renderSched() {
     patsLocales[i].schedule();
   }
 }
+
+function formData() {
+
+  event.preventDefault();
+
+  var name = event.target.name.value;
+  var min = event.target.min.value;
+  var max = event.target.max.value;
+  var avg = event.target.avg.value;
+
+  new Store(name, min, max, avg);
+  storeTable.innerHTML = '';
+  tossSchedule.innerHTML = '';
+  makeTable();
+
+
+
+  form.reset();
+
+
+
+}
 //declaring element to add to
 //**********************************************************************************************
 var storeTable = document.getElementById('sales_table');
 
 var tossSchedule = document.getElementById('toss_schedule');
+
+var form = document.getElementById('new_store');
 
 //Global arrays
 //**********************************************************************************************
@@ -186,9 +218,5 @@ new Store('Alki', 2, 16, 4.6);
 
 //rendering Sales numbers
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-renderHeader();
-renderSales();
-renderFooter();
-
-schedHeader();
-renderSched();
+makeTable();
+form.addEventListener('submit', formData);
