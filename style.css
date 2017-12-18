@@ -1,11 +1,15 @@
 @charset "UTF-8";
 
+fieldset {
+  border: 0;
+}
+
 main {
   margin-top: 150px;
 }
 
-fieldset {
-  outline: none;
+form {
+  margin-left: 100px;
 }
 
 input[type="text"] {
@@ -18,17 +22,27 @@ button {
   border: none;
   border-radius: 3px;
   background: #905b6c;
-  color: #fff;
+  color: #441313;
   padding: 4px 12px;
   font-size: 20px;
   margin-left: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
+  display: block;
+  transition: 350ms all;
+}
+
+button:hover {
+
+  background: #623644;
+  color: #1b0505;
+
+
 }
 
 fieldset {
   padding: 20px;
-  display: inline;
+  display: inline-grid;
 }
 header img {
   position: absolute;
@@ -74,32 +88,25 @@ h1 {
 }
 
 h2 {
-  font-size:1em;
-  font-weight: 300;
+  font-size:24px;
+  font-weight: 200;
   text-align: left;
   display: block;
   line-height:1em;
-  padding-bottom: 2em;
-  color: #756e6e;
+
+  color: #050505;
   margin-left: 120px;
 }
 
-h2 a {
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #FB667A;
-  text-decoration: none;
-}
 
-
-.container th h1 {
+.table th h1 {
 	  font-weight: bold;
 	  font-size: 1em;
   text-align: left;
   color: #5c1b1b;
 }
 
-.container td {
+.table td {
 	  font-weight: normal;
 	  font-size: 1em;
   -webkit-box-shadow: 0 2px 2px -2px #0E1119;
@@ -107,7 +114,7 @@ h2 a {
 	        box-shadow: 0 2px 2px -2px #0E1119;
 }
 
-.container {
+.table {
 	  text-align: left;
 	  overflow: hidden;
 	  width: 80%;
@@ -116,36 +123,36 @@ h2 a {
   padding: 0 0 8em 0;
 }
 
-.container td, .container th {
+.table td, .table th {
 	  padding-bottom: 2%;
 	  padding-top: 2%;
   padding-left:2%;
 }
 
 /* Background-color of the odd rows */
-.container tr:nth-child(odd) {
+.table tr:nth-child(odd) {
 	  background-color: #c78a9e;
 }
 
 /* Background-color of the even rows */
-.container tr:nth-child(even) {
+.table tr:nth-child(even) {
 	  background-color: #905b6c;
 }
 
-.container th {
+.table th {
 	  background-color: #c7b7b7;
 }
 
-.container td:first-child { color: #4a1919; }
+.table td:first-child { color: #4a1919; }
 
-.container tr:hover {
+.table tr:hover {
    background-color: #464A52;
 -webkit-box-shadow: 0 6px 6px -6px #0E1119;
 	   -moz-box-shadow: 0 6px 6px -6px #0E1119;
 	        box-shadow: 0 6px 6px -6px #0E1119;
 }
 
-.container td:hover {
+.table td:hover {
   background-color: #4db0f7;
   color: #16657a;
   font-weight: bold;
@@ -160,6 +167,6 @@ h2 a {
 }
 
 @media (max-width: 800px) {
-.container td:nth-child(4),
-.container th:nth-child(4) { display: none; }
+.table td:nth-child(4),
+.table th:nth-child(4) { display: none; }
 }
